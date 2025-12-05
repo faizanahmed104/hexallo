@@ -1,26 +1,39 @@
+/* 1. Google fonts MUST be first */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/* 2. Tailwind v4 core */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* 3. Tailwind v4 theme tokens */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* brand colors */
+  --color-brand-brown: #2f251d;
+  --color-brand-navLight: #efc96d;
+  --color-brand-navDark: #ae6f28;
+
+  /* neutrals / surfaces */
+  --color-grayHex-light: #f2f2f2;
+  --color-surface-card: #faf8ed;
+
+  /* text colors */
+  --color-textHex-title: #2d3134;
+  --color-textHex-subtle: #5b5f62;
+  --color-textHex-black: #484848;
+
+  /* accents */
+  --color-accent-star: #fcd53f;
+
+  /* fonts */
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+
+  /* radius & shadows */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 4. Base body styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-sans antialiased bg-grayHex-light text-textHex-black;
 }
